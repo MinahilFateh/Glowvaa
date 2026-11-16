@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glowvaa – Skincare &amp; Makeup Store</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#top">Glowvaa</a>
+  <nav><a href="#shop">Shop</a></nav>
+  <button class="cartbtn" id="open" aria-label="Open cart">Cart (<span id="count">0</span>)</button>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Skincare that works. Makeup that stays.</h1>
+    <p>Simple routines and everyday colour, made for humid summers and dry winters. Free delivery on orders above PKR 5,000.</p>
+    <a class="btn" href="#shop">Shop the range</a>
+  </div>
+  <div class="heroart" id="heroart"></div>
+</div>
+
+<section id="shop">
+  <h2>Product catalog</h2>
+  <p class="sub">Eight bestsellers across skincare and makeup. Add anything to your cart and review it before checkout.</p>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+</main>
+<footer>Glowvaa · Class project demo · Cash on delivery</footer>
+
+<div id="scrim"></div>
+<aside id="drawer" aria-label="Shopping cart">
+  <div class="dh"><h3>Your cart</h3><button id="close" aria-label="Close cart">×</button></div>
+  <div id="items"></div>
+  <div class="df"><div class="tot"><span>Total</span><span id="total">PKR 0</span></div><button class="btn" id="checkout">Proceed to checkout</button></div>
+</aside>
+<div class="pm" id="pm" role="dialog" aria-modal="true" aria-labelledby="pmname">
+  <div class="pmbox">
+    <button class="x" id="pmclose" aria-label="Close product view">×</button>
+    <div class="pmimg" id="pmimg"></div>
+    <div class="pmtxt">
+      <span class="cat" id="pmcat"></span>
+      <h3 id="pmname"></h3>
+      <p class="desc" id="pmdesc"></p>
+      <div class="price" id="pmprice" style="font-size:26px"></div>
+      <button class="btn" id="pmadd">Add to cart</button>
+      <span class="cat">Cash on delivery · Free delivery above PKR 5,000</span>
+    </div>
+  </div>
+</div>
+<div class="pm" id="co" role="dialog" aria-modal="true" aria-labelledby="coh">
+  <div class="cobox">
+    <button class="x" id="coclose" aria-label="Close checkout">×</button>
+    <div id="coview" class="cogrid">
+      <form id="cof">
+        <h3 id="coh">Delivery details</h3>
+        <label>Full name<input name="name" required autocomplete="name"></label>
+        <label>Phone number<input name="phone" type="tel" required minlength="10" placeholder="03XX XXXXXXX" autocomplete="tel"></label>
+        <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
+        <label>City<input name="city" required autocomplete="address-level2"></label>
+        <label>Full address<textarea name="address" rows="3" required autocomplete="street-address"></textarea></label>
+        <fieldset>
+          <legend>Payment method</legend>
+          <label class="radio"><input type="radio" name="pay" value="Cash on delivery" checked> Cash on delivery</label>
+          <label class="radio"><input type="radio" name="pay" value="Easypaisa / JazzCash"> Easypaisa / JazzCash</label>
+          <label class="radio"><input type="radio" name="pay" value="Bank transfer"> Bank transfer</label>
+        </fieldset>
+        <button class="btn" type="submit">Place order</button>
+      </form>
+      <div class="cosum">
+        <h3>Order summary</h3>
+        <div id="cosumbody"></div>
+      </div>
+    </div>
+    <div id="cosuccess" hidden>
+      <div class="ok">✓</div>
+      <h3>Thank you, <span id="okname"></span>!</h3>
+      <p>Your order <strong id="okid"></strong> has been placed.</p>
+      <div class="cosum" id="oksum"></div>
+      <p class="cat" id="okinfo"></p>
+      <button class="btn" id="okdone">Continue shopping</button>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
